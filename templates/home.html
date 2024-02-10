@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - DarazBot</title>
+    <style>
+        body {
+            background-color: #1a1a1a; /* Dark background */
+            color: #ffffff; /* White text color */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333333; /* Header background color */
+            padding: 10px 0;
+            text-align: center;
+            position: fixed; /* Fixed at the top */
+            width: 100%;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-link {
+            color: #ffffff; /* Links color */
+            margin: 0 15px;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-link.active,
+        .nav-link:hover {
+            background-color: #4CAF50; /* Active or hover state color */
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full height of the viewport */
+            padding-top: 60px; /* Space for fixed header */
+        }
+
+        .logo-container {
+            text-align: center;
+        }
+
+        .center-logo {
+            width: 300px; /* Adjust as needed */
+            height: auto; /* Adjust as needed */
+            /* Center the logo image */
+            display: block;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="/" class="nav-link">Home</a>
+            <a href="/chatbot" class="nav-link active">Chatbot</a>
+            <a href="/dashboard" class="nav-link">Dashboard</a>
+        </nav>
+    </header>
+    <div class="content">
+        <div class="logo-container">
+            <img src="https://i.ibb.co/pWvjT1D/ad.png" alt="DarazBot Logo" class="center-logo">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

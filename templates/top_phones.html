@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Phones</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body, html {
+    height: 100%;
+    margin: 0;
+    background-color: #2c3e50; /* Dark blue background */
+    color: white;
+    font-family: 'Arial', sans-serif;
+}
+
+        .top-phones-container {
+            text-align: center;
+            padding-top: 100px; /* Adjust according to your layout */
+        }
+
+        .category-select {
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .submit-button {
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-button:hover {
+            background-color: #3498db;
+        }
+        .back-button {
+            background-color: #2c3e50; /* Button background color */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none; /* Removes underline from links */
+        }
+
+        .back-button:hover {
+            background-color: #34495e;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-phones-container">
+        <h1>Select Category for Top Phones</h1>
+        <form action="/top_phones_category" method="post">
+            <select name="category" class="category-select">
+                <option value="priceA">Price(Ascending)</option>
+                <option value="ratingA">Rating(Ascending)</option>
+                <option value="priceD">Price(Descending)</option>
+                <option value="ratingD">Rating(Descending)</option>
+                <option value="generalA">In General(Ascending)</option>
+                <option value="generalD">In General(Descending)</option>
+                <option value="ramA">RAM(Ascending)</option>
+                <option value="ramD">RAM(Descending)</option>
+                <option value="romA">ROM(Ascending)</option>
+                <option value="romD">ROM(Descending)</option>
+            </select>
+            <br>
+            <button type="submit" class="submit-button">Show Top Phones</button>
+        </form>
+        <a href="/dashboard" class="back-button">Back to Dashboard</a>
+    </div>
+</body>
+</html>

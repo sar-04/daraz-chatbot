@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Phones - {{ selected_category | capitalize }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            background-color: #2c3e50; /* Dark blue background */
+            color: white;
+            font-family: 'Arial', sans-serif;
+        }
+        .results-container {
+            padding-top: 60px; /* Adjust according to your layout */
+            text-align: center;
+        }
+
+        table {
+            margin: auto;
+            width: 80%; /* Adjust as needed */
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd; /* Table cell border */
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #34495e; /* Header background color */
+            color: white;
+        }
+
+        .back-button {
+            background-color: #2c3e50; /* Button background color */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+
+        .back-button:hover {
+            background-color: #34495e;
+        }
+    </style>
+</head>
+<body>
+    <div class="results-container">
+        <h1>Top Phones - {{ selected_category | capitalize }}</h1>
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Price</th>
+                <th>User Rating</th>
+                <th>Link</th>
+            </tr>
+            {{ top_phones_html | safe }}
+        </table>
+
+        <!-- Back to Dashboard Button -->
+        <a href="/dashboard" class="back-button">Back to Dashboard</a>
+    </div>
+</body>
+</html>

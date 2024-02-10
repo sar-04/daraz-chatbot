@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body, html {
+    height: 100%;
+    margin: 0;
+    background-color: #2c3e50; /* Dark blue background */
+    color: white;
+    font-family: 'Arial', sans-serif;
+}
+        .statistics-container {
+            text-align: center;
+            padding-top: 100px; /* Adjust according to your layout */
+        }
+
+        .stat-item {
+            background-color: #34495e; /* Item background color */
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%; /* Adjust width as needed */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Adds shadow for depth */
+        }
+
+        .stat-title {
+            color: #ecf0f1;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .stat-value {
+            color: #16a085; /* Value color */
+            font-size: 20px;
+        }
+        .back-button {
+            background-color: #2c3e50; /* Button background color */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none; /* Removes underline from links */
+        }
+
+        .back-button:hover {
+            background-color: #34495e;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-header">
+        <div class="nav-header">
+            <!-- Navigation Links (if any) -->
+        </div>
+    </div>
+
+    <div class="statistics-container">
+        <h1>Statistics</h1>
+        <div class="stat-item">
+            <div class="stat-title">Average Price</div>
+            <div class="stat-value">{{ stats['average_price'] }}</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-title">Most Occurring Brand</div>
+            <div class="stat-value">{{ stats['most_occuring_brand'] }}</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-title">Average Rating</div>
+            <div class="stat-value">{{ stats['average_rating'] }}</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-title">Most Occurring RAM</div>
+            <div class="stat-value">{{ stats['most_occuring_ram'] }}</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-title">Most Occurring ROM</div>
+            <div class="stat-value">{{ stats['most_occuring_rom'] }}</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-title">Brand with the Cheapest Phone</div>
+            <div class="stat-value">{{ stats['cheapest_brand'] }}</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-title">Brand with the Most Expensive Phone</div>
+            <div class="stat-value">{{ stats['expensive_brand'] }}</div>
+        </div>
+        <a href="/dashboard" class="back-button">Back to Dashboard</a>
+    </div>
+</body>
+</html>
